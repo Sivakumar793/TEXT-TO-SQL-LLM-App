@@ -13,7 +13,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 # Function to load Google model and generate SQL query from question
 def get_gemini_response(question, prompt):
     try:
-        model = genai.GenerativeModel('models/Gemini 2.5 Flash Live') #('models/gemini-pro-latest')
+        model = genai.GenerativeModel('models/gemini-2.5-flash') #('models/gemini-pro-latest')
         #model = genai.GenerativeModel('google-ai-generativelanguage-0.6.15') #('models/text-bison-001')  # Use a valid model name here
         response = model.generate_content([prompt[0], question])
         return response.text
